@@ -3,7 +3,7 @@ const router = require('express').Router();
 router.route('/')
   .post((req, res) => {
     const { body } = req;
-    console.log('Adding new Issue#' + body);
+    console.log('Adding new Issue#' + JSON.stringify(body));
     res.status(201).json({})
   })
   .patch((req, res) => {
