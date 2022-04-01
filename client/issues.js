@@ -9,7 +9,7 @@ function getIssue(args) {
   const { id } = args;
   const issue = fetch(`${baseUrl}/${id}`)
     .then(resp => resp.json())
-  console.log('created new issue', issue)
+    .then( issue => console.log('created new issue', issue));
 }
 
 function updateIssue(args) {

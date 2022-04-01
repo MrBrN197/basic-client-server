@@ -3,18 +3,17 @@ const router = require('express').Router();
 router.route('/')
   .post((req, res) => {
     const { body } = req;
-    console.log('Adding new Issue >', body);
+    console.log('Adding new Issue#' + body);
     res.status(201).json({})
   })
   .patch((req, res) => {
     const { body } = req;
-    console.log('Update Issue >', body);
+    console.log('Update Issue#' + body);
     res.json(body)
   })
   .delete((req, res) => {
     const { body } = req;
-    console.log('deleting')
-    console.log('Deletign Issue#', body.id);
+    console.log('Deleting Issue#' + body.id);
     res.json(body)
   })
 
