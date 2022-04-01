@@ -1,13 +1,6 @@
 const router = require('express').Router();
 
 router.route('/')
-  .get((req, res) => {
-    res.json({
-      id: 1,
-      title: 'this is a title',
-      description: 'this is a descriptoin'
-    });
-  })
   .post((req, res) => {
     const { body } = req;
     console.log('Adding new Issue >', body);
@@ -24,6 +17,15 @@ router.route('/')
     console.log('Deletign Issue#', body.id);
     res.json(body)
   })
+
+router.get('/:id', (req, res) => {
+  const { id } = req.params;
+  res.json({
+    id,
+    title: 'this is a title',
+    description: 'this is a descriptoin'
+  });
+})
 
 
 module.exports = router;
